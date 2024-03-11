@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
-import { useDraggable } from 'react-use-draggable-scroll';
-import { clsx } from 'clsx';
+import React, { useRef } from "react";
+import { useDraggable } from "react-use-draggable-scroll";
+import { clsx } from "clsx";
 
 const ScrollShadow = ({ children, direction }) => {
   const scrollClass = `scrollcontainer scrollcontainer--${direction}`;
@@ -15,8 +15,10 @@ const ScrollShadow = ({ children, direction }) => {
       ref={ref}
       className={clsx(
         scrollClass,
-        'scrollbar-hide select-none',
-        direction == 'vertical' ? 'w-max' : ''
+        " scrollbar-hide select-none ",
+        direction == "vertical"
+          ? "w-max overflow-y-scroll"
+          : " overflow-x-scroll"
       )}
     >
       <div className="scrollcontainer__content">{children}</div>
